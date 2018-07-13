@@ -4,6 +4,11 @@ Simplify system tests.
 
 ## How to use
 
+### Dependencies
+
+- `Go` installed
+- `dep` dependency manager
+
 ### Install it
 
 ```shell
@@ -22,7 +27,9 @@ $ dep ensure -add github.com/nmeji/tstr
 
 If you only need to access a few env vars, you can just get them straight away.
 
-```import "github.com/nmeji/tstr/env"```
+```go
+import "github.com/nmeji/tstr/env"
+```
 
 #### Example
 
@@ -181,6 +188,20 @@ checker.
     ExpectBody.ToHaveInJson("$.books[0].price", 88.94).
     MakeAssertion(t)
 ```
+
+## TODO
+
+- [ ] Request Helpers
+- [ ] More Assertion Matchers
+    - [ ] Greater/Less Than Value
+    - [ ] Range Values
+    - [ ] List of Values
+    - [ ] Regex Matcher
+    - [ ] Negative Asserts (should not match [matcher])
+- [ ] Expect Header
+- [ ] (Test Data) XML Unmarshaller
+- [ ] SOAP Assertion
+    - [ ] Support Xpath filter
 
 ## License
 
