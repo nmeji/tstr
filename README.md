@@ -2,7 +2,7 @@
 
 Simplify system tests.
 
-## How to use it
+## How to use
 
 ### Install it
 
@@ -22,26 +22,26 @@ $ dep ensure -add github.com/nmeji/tstr
 
 If you only need to access a few env vars, you can just get them straight away.
 
-#### Import
-
-`import "github.com/nmeji/tstr/env"`
+```import "github.com/nmeji/tstr/env"```
 
 #### Example
 
 ```go
 env := env.StrVal("ENV")
 fmt.Print(env)  // dev, qa, preprod
+```
 
+```go
 port, err := env.IntVal("PORT")
 fmt.Print(port)  // 443, 80
+```
 
+```go
 toggle, err := env.BoolVal("TOGGLE")
 fmt.Print(toggle)  // true, false
-
-/*
- non-nil err means it failed converting the type to int or bool
-*/
 ```
+
+non-nil `err` means it failed converting the type to int or bool
 
 ### Test Data
 
